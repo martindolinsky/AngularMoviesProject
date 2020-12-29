@@ -20,6 +20,8 @@ import {EditTvseriesComponent} from './admin/edit-tvseries/edit-tvseries.compone
 import {MaterialModule} from './modules/material/material.module';
 import {MoviesTableComponent} from './admin/movies-table/movies-table.component';
 import {TvseriesTableComponent} from './admin/tvseries-table/tvseries-table.component';
+import {CreateMovieComponent} from './admin/create-movie/create-movie.component';
+import {CreateTvseriesComponent} from './admin/create-tvseries/create-tvseries.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import {TvseriesTableComponent} from './admin/tvseries-table/tvseries-table.comp
       EditMenuComponent,
       EditTvseriesComponent,
       MoviesTableComponent,
-      TvseriesTableComponent
+      TvseriesTableComponent,
+      CreateMovieComponent,
+      CreateTvseriesComponent
   ],
   imports: [
       BrowserModule,

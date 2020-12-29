@@ -25,6 +25,10 @@ export class TvseriesService {
         return this.http.post<TvSerie>(API_URL + 'update/' + serialId, serial);
     }
 
+    createSerial(serial: TvSerie): Observable<TvSerie> {
+        return this.http.post<TvSerie>(API_URL + 'create', serial);
+    }
+
     deleteSerial(serial: TvSerie): any {
         return this.http.delete(API_URL + 'delete/' + serial.serialID);
     }

@@ -12,6 +12,8 @@ import {EditMovieComponent} from './admin/edit-movie/edit-movie.component';
 import {EditTvseriesComponent} from './admin/edit-tvseries/edit-tvseries.component';
 import {MoviesTableComponent} from './admin/movies-table/movies-table.component';
 import {TvseriesTableComponent} from './admin/tvseries-table/tvseries-table.component';
+import {CreateMovieComponent} from './admin/create-movie/create-movie.component';
+import {CreateTvseriesComponent} from './admin/create-tvseries/create-tvseries.component';
 
 const routes: Routes = [
     {
@@ -30,7 +32,9 @@ const routes: Routes = [
     {path: 'tvseries', component: TvseriesComponent},
     {path: 'edit', component: EditMenuComponent},
     {path: 'edit/movies/:id', component: EditMovieComponent},
-    {path: 'edit/tvseries/:id', component: EditTvseriesComponent}
+    {path: 'edit/tvseries/:id', component: EditTvseriesComponent},
+    {path: 'create/movie', component: CreateMovieComponent},
+    {path: 'create/tvseries', component: CreateTvseriesComponent},
 ];
 
 

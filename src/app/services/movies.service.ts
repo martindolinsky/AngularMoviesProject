@@ -25,6 +25,10 @@ export class MoviesService {
         return this.http.post<Movie>(API_URL + 'update/' + movieId, movie);
     }
 
+    createMovie(movie: Movie): Observable<Movie> {
+        return this.http.post<Movie>(API_URL + 'create', movie);
+    }
+
     deleteMovie(movie: Movie): any {
         return this.http.delete(API_URL + 'delete/' + movie.movieID);
     }
