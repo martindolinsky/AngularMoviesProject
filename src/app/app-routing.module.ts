@@ -10,20 +10,29 @@ import {TvseriesComponent} from './tvseries/tvseries.component';
 import {EditMenuComponent} from './admin/edit-menu/edit-menu.component';
 import {EditMovieComponent} from './admin/edit-movie/edit-movie.component';
 import {EditTvseriesComponent} from './admin/edit-tvseries/edit-tvseries.component';
+import {MoviesTableComponent} from './admin/movies-table/movies-table.component';
+import {TvseriesTableComponent} from './admin/tvseries-table/tvseries-table.component';
 
 const routes: Routes = [
+    {
+        path: 'admin', component: BoardAdminComponent,
+        children: [
+            {path: 'movies', component: MoviesTableComponent},
+            {path: 'tvseries', component: TvseriesTableComponent},
+        ]
+    },
     {path: 'home', component: HomeComponent},
     {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: 'register', component: RegisterComponent},
     {path: 'login', component: LoginComponent},
     {path: 'profile', component: ProfileComponent},
-    {path: 'admin', component: BoardAdminComponent},
     {path: 'movies', component: MoviesComponent},
     {path: 'tvseries', component: TvseriesComponent},
     {path: 'edit', component: EditMenuComponent},
     {path: 'edit/movies/:id', component: EditMovieComponent},
-    {path: 'edit/tvseries', component: EditTvseriesComponent}
+    {path: 'edit/tvseries/:id', component: EditTvseriesComponent}
 ];
+
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],

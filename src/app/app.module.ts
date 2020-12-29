@@ -18,6 +18,8 @@ import {EditMovieComponent} from './admin/edit-movie/edit-movie.component';
 import {EditMenuComponent} from './admin/edit-menu/edit-menu.component';
 import {EditTvseriesComponent} from './admin/edit-tvseries/edit-tvseries.component';
 import {MaterialModule} from './modules/material/material.module';
+import {MoviesTableComponent} from './admin/movies-table/movies-table.component';
+import {TvseriesTableComponent} from './admin/tvseries-table/tvseries-table.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import {MaterialModule} from './modules/material/material.module';
       TvseriesComponent,
       EditMovieComponent,
       EditMenuComponent,
-      EditTvseriesComponent
+      EditTvseriesComponent,
+      MoviesTableComponent,
+      TvseriesTableComponent
   ],
   imports: [
       BrowserModule,

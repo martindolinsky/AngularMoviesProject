@@ -1,0 +1,28 @@
+<table class="table table-hover" style="width: 50%;">
+    <thead>
+    <tr>
+        <th>movieID</th>
+        <th>title</th>
+        <th>action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let movie of movies">
+        <td>{{movie.movieID}}</td>
+        <td>{{movie.titleEN}} {{movie.secondTitleEN}}</td>
+        <td>
+            <button class="btn btn-outline-secondary" routerLink="../../edit/movies/{{movie.movieID}}" type="button">
+                <!--<fa-icon [icon]="faEdit"></fa-icon>--> edit
+            </button>
+            <button (click)="deleteMovie(movie)" class="btn btn-outline-danger" type="button">
+                <!--<fa-icon [icon]="faDelete" style="color: darkred"></fa-icon>-->delet
+            </button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+Button trigger modal
+<!--<button type="button" class="btn btn-dark" (click)="OnNewUserButtonClick()">-->
+<!--Add user-->
+<!--</button>-->
+<!--<app-user-edit [user]="editedUser" [actionWithUser]="actionWithUser" (saved)="saveUser($event)"></app-user-edit>-->

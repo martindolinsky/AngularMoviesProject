@@ -1,0 +1,24 @@
+<table class="table table-hover" style="width: 50%;">
+    <thead>
+    <tr>
+        <th>movieID</th>
+        <th>title</th>
+        <th>action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let tvSerie of tvSeries">
+        <td>{{tvSerie.serialID}}</td>
+        <td>{{tvSerie.titleEN}} {{tvSerie.secondTitleEN}}</td>
+        <td>
+            <button class="btn btn-outline-secondary" routerLink="../../edit/tvseries/{{tvSerie.serialID}}"
+                    type="button">
+                <!--<fa-icon [icon]="faEdit"></fa-icon>--> edit
+            </button>
+            <button (click)="deleteTvSerie(tvSerie)" class="btn btn-outline-danger" type="button">
+                <!--<fa-icon [icon]="faDelete" style="color: darkred"></fa-icon>--> delet
+            </button>
+        </td>
+    </tr>
+    </tbody>
+</table>
