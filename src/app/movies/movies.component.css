@@ -1,0 +1,15 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.container {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    border-radius: 8px;
+    text-align: center;
+}

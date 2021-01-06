@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {Movie} from '../entities/Movie';
 
 const API_URL = 'http://localhost:8080/movies/';
+const SEARCH_URL = 'http://localhost:8080/search/movies/';
 
 @Injectable({
     providedIn: 'root'
@@ -31,5 +32,9 @@ export class MoviesService {
 
     deleteMovie(movie: Movie): any {
         return this.http.delete(API_URL + 'delete/' + movie.movieID);
+    }
+
+    searchMovie(search: string): any {
+        return this.http.get<Movie>(SEARCH_URL + search, {responseType: 'json'});
     }
 }

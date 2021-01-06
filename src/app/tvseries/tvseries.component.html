@@ -1,14 +1,8 @@
-<div *ngFor="let tvserie of tvseries" style="margin: 50px">
-    <h1>{{tvserie.titleEN}} {{tvserie.secondTitleEN}}</h1>
-    <h2>{{tvserie.titleSK}} {{tvserie.secondTitleSK}}</h2>
-    <span>{{tvserie.year}}</span>
-    <p>{{tvserie.description}}</p>
-    <p>{{tvserie.actors}}</p>
-    <p>{{tvserie.director}}</p>
-    <p>{{tvserie.src}}</p>
-    <p>{{tvserie.srcImg}}</p>
-    <br>
-    <br>
-    <br>
+<div class="wrapper">
+    <div *ngFor="let serial of tvseries">
+        <div class="container">
+            <img [src]="serial.srcImg" alt="{{serial.titleEN}} {{serial.secondTitleEN}}" height="200">
+            <h6><a routerLink="/tvseries/{{serial.serialID}}">{{serial.titleEN}} {{serial.secondTitleEN}}</a></h6>
+        </div>
+    </div>
 </div>
-

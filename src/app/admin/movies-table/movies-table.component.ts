@@ -10,8 +10,7 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class MoviesTableComponent implements OnInit {
     movies: Movie[];
-    editedMovie: Movie;
-    actionWithMovie: string;
+    deletedMovie: Movie;
 
     constructor(private moviesService: MoviesService, private route: ActivatedRoute) {
     }
@@ -28,6 +27,7 @@ export class MoviesTableComponent implements OnInit {
     }
 
     deleteMovie(movie: Movie): void {
+        this.deletedMovie = movie;
         this.moviesService.deleteMovie(movie).subscribe(ok => {
             this.movies = this.movies.filter(m => m !== movie);
         });

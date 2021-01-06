@@ -1,15 +1,9 @@
-<div *ngFor="let movie of movies" style="margin: 50px">
-    <h1>{{movie.titleEN}} {{movie.secondTitleEN}}</h1>
-    <h2>{{movie.titleSK}} {{movie.secondTitleSK}}</h2>
-    <span>{{movie.year}}</span>
-    <p>{{movie.length}}</p>
-    <p>{{movie.description}}</p>
-    <p>{{movie.actors}}</p>
-    <p>{{movie.director}}</p>
-    <p>{{movie.src}}</p>
-    <p>{{movie.srcImg}}</p>
-    <br>
-    <br>
-    <br>
+<div class="wrapper">
+    <div *ngFor="let movie of movies">
+        <div class="container">
+            <img [src]="movie.srcImg" alt="{{movie.titleEN}} {{movie.secondTitleEN}}" height="200">
+            <h6><a routerLink="/movies/{{movie.movieID}}">{{movie.titleEN}} {{movie.secondTitleEN}}</a></h6>
+        </div>
+    </div>
 </div>
 

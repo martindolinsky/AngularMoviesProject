@@ -22,6 +22,11 @@ import {MoviesTableComponent} from './admin/movies-table/movies-table.component'
 import {TvseriesTableComponent} from './admin/tvseries-table/tvseries-table.component';
 import {CreateMovieComponent} from './admin/create-movie/create-movie.component';
 import {CreateTvseriesComponent} from './admin/create-tvseries/create-tvseries.component';
+import {UsersTableComponent} from './admin/users-table/users-table.component';
+import {NotFoundComponent} from './not-found/not-found.component';
+import {MovieDetailsComponent, SafePipe} from './movie-details/movie-details.component';
+import {TvseriesDetailsComponent} from './tvseries-details/tvseries-details.component';
+import {SearchComponent} from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +45,13 @@ import {CreateTvseriesComponent} from './admin/create-tvseries/create-tvseries.c
       MoviesTableComponent,
       TvseriesTableComponent,
       CreateMovieComponent,
-      CreateTvseriesComponent
+      CreateTvseriesComponent,
+      UsersTableComponent,
+      NotFoundComponent,
+      MovieDetailsComponent,
+      TvseriesDetailsComponent,
+      SafePipe,
+      SearchComponent
   ],
   imports: [
       BrowserModule,

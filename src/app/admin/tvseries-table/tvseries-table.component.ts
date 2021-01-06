@@ -28,6 +28,7 @@ export class TvseriesTableComponent implements OnInit {
     }
 
     deleteTvSerie(serial: TvSerie): void {
+        this.editedSerial = serial;
         this.tvseriesService.deleteSerial(serial).subscribe(ok => {
             this.tvSeries = this.tvSeries.filter(s => s !== serial);
         });

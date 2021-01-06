@@ -18,7 +18,7 @@
         <li *ngFor="let role of currentUser.roles">
             {{ role }}
             <br>
-            <a *ngIf="role === adminRole" routerLink="../admin">ADMIN PANEL</a>
+            <a *ngIf="role === adminRole" routerLink="../admin/movies">ADMIN PANEL</a>
         </li>
     </ul>
 </div>

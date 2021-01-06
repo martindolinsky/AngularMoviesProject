@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {TvSerie} from '../entities/TvSerie';
 
 const API_URL = 'http://localhost:8080/tvseries/';
+const SEARCH_URL = 'http://localhost:8080/search/tvseries/';
 
 @Injectable({
     providedIn: 'root'
@@ -31,5 +32,9 @@ export class TvseriesService {
 
     deleteSerial(serial: TvSerie): any {
         return this.http.delete(API_URL + 'delete/' + serial.serialID);
+    }
+
+    searchSerial(search: string): any {
+        return this.http.get<TvSerie>(SEARCH_URL + search, {responseType: 'json'});
     }
 }

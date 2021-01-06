@@ -43,6 +43,11 @@ export class EditMovieComponent implements OnInit {
         this.moviesService.saveMovie(this.movie.movieID, this.movie).subscribe(movie => {
             this.movie = movie;
         });
+        this.redirectToTable();
+    }
+
+    redirectToTable(): void {
+        window.location.replace('/admin/movies');
     }
 
 }
