@@ -7,7 +7,6 @@ import {ProfileComponent} from './profile/profile.component';
 import {BoardAdminComponent} from './board-admin/board-admin.component';
 import {MoviesComponent} from './movies/movies.component';
 import {TvseriesComponent} from './tvseries/tvseries.component';
-import {EditMenuComponent} from './admin/edit-menu/edit-menu.component';
 import {EditMovieComponent} from './admin/edit-movie/edit-movie.component';
 import {EditTvseriesComponent} from './admin/edit-tvseries/edit-tvseries.component';
 import {MoviesTableComponent} from './admin/movies-table/movies-table.component';
@@ -19,10 +18,11 @@ import {NotFoundComponent} from './not-found/not-found.component';
 import {MovieDetailsComponent} from './movie-details/movie-details.component';
 import {TvseriesDetailsComponent} from './tvseries-details/tvseries-details.component';
 import {SearchComponent} from './search/search.component';
+import {AuthGuard} from './guards/auth.guard';
 
 const routes: Routes = [
     {
-        path: 'admin', component: BoardAdminComponent,
+        path: 'admin', component: BoardAdminComponent, canActivate: [AuthGuard],
         children: [
             {path: 'movies', component: MoviesTableComponent},
             {path: 'tvseries', component: TvseriesTableComponent},
@@ -36,11 +36,10 @@ const routes: Routes = [
     {path: 'profile', component: ProfileComponent},
     {path: 'movies', component: MoviesComponent},
     {path: 'tvseries', component: TvseriesComponent},
-    {path: 'edit', component: EditMenuComponent},
-    {path: 'edit/movies/:id', component: EditMovieComponent},
-    {path: 'edit/tvseries/:id', component: EditTvseriesComponent},
-    {path: 'create/movie', component: CreateMovieComponent},
-    {path: 'create/tvseries', component: CreateTvseriesComponent},
+    {path: 'edit/movies/:id', component: EditMovieComponent, canActivate: [AuthGuard]},
+    {path: 'edit/tvseries/:id', component: EditTvseriesComponent, canActivate: [AuthGuard]},
+    {path: 'create/movie', component: CreateMovieComponent, canActivate: [AuthGuard]},
+    {path: 'create/tvseries', component: CreateTvseriesComponent, canActivate: [AuthGuard]},
     {path: 'movies/:id', component: MovieDetailsComponent},
     {path: 'tvseries/:id', component: TvseriesDetailsComponent},
     {path: 'search/:search', component: SearchComponent},

@@ -30,4 +30,8 @@ export class AuthService {
             password: user.password,
         }, httpOptions);
     }
+
+    loggedIn(): any {
+        return !!localStorage.getItem('auth-token');
+    }
 }

@@ -15,7 +15,6 @@ import {authInterceptorProviders} from './helpers/auth.interceptor';
 import {MoviesComponent} from './movies/movies.component';
 import {TvseriesComponent} from './tvseries/tvseries.component';
 import {EditMovieComponent} from './admin/edit-movie/edit-movie.component';
-import {EditMenuComponent} from './admin/edit-menu/edit-menu.component';
 import {EditTvseriesComponent} from './admin/edit-tvseries/edit-tvseries.component';
 import {MaterialModule} from './modules/material/material.module';
 import {MoviesTableComponent} from './admin/movies-table/movies-table.component';
@@ -40,7 +39,6 @@ import {SearchComponent} from './search/search.component';
       MoviesComponent,
       TvseriesComponent,
       EditMovieComponent,
-      EditMenuComponent,
       EditTvseriesComponent,
       MoviesTableComponent,
       TvseriesTableComponent,

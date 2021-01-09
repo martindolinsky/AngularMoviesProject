@@ -7,28 +7,40 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+                <a [routerLinkActive]="['active']" class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/movies">Movies</a>
+                <a [routerLinkActive]="['active']" class="nav-link" routerLink="/movies">Movies</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/tvseries">TV Series</a>
+                <a [routerLinkActive]="['active']" class="nav-link" routerLink="/tvseries">TV Series</a>
             </li>
         </ul>
         <app-search></app-search>
 
 
-        <span *ngIf="isLoggedIn; else elseBlock" class="navbar-text ml-auto">
-            <a routerLink="/profile">{{username}}</a>
-            <a (click)="logout()" class="nav-link" routerLink="/login">Logout</a>
-        </span>
+        <ul *ngIf="isLoggedIn; else elseBlock" class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a [routerLinkActive]="['active']" class="nav-link" routerLink="/profile">{{username}}</a>
+            </li>
+            <li class="nav-item">
+                <a (click)="logout()" class="nav-link" routerLink="/login">Logout</a>
+            </li>
+        </ul>
 
         <ng-template #elseBlock>
-            <span class="navbar-text ml-auto"><a routerLink="/login">Login</a></span>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a [routerLinkActive]="['active']" class="nav-link" routerLink="login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <button [routerLinkActive]="['active']" class="nav-link btn btn-outline-success p-2"
+                            routerLink="register">Register
+                    </button>
+                </li>
+            </ul>
 
-            <span class="nav-item"><a class="nav-link" routerLink="register">Register</a></span>
         </ng-template>
     </div>
 </nav>
