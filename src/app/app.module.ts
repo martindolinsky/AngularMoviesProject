@@ -25,10 +25,8 @@ import {UsersTableComponent} from './admin/users-table/users-table.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {MovieDetailsComponent, SafePipe} from './movie-details/movie-details.component';
 import {TvseriesDetailsComponent} from './tvseries-details/tvseries-details.component';
-import {SearchComponent} from './search/search.component';
 import {ConfirmDialogComponent} from './admin/confirm-dialog/confirm-dialog.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {ResultsComponent} from './results/results.component';
 
 @NgModule({
   declarations: [
@@ -52,9 +50,7 @@ import {ResultsComponent} from './results/results.component';
       MovieDetailsComponent,
       TvseriesDetailsComponent,
       SafePipe,
-      SearchComponent,
       ConfirmDialogComponent,
-      ResultsComponent
   ],
   imports: [
       BrowserModule,

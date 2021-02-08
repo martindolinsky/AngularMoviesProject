@@ -17,7 +17,6 @@ import {UsersTableComponent} from './admin/users-table/users-table.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {MovieDetailsComponent} from './movie-details/movie-details.component';
 import {TvseriesDetailsComponent} from './tvseries-details/tvseries-details.component';
-import {SearchComponent} from './search/search.component';
 import {AuthGuard} from './guards/auth.guard';
 
 const routes: Routes = [
@@ -42,7 +41,6 @@ const routes: Routes = [
     {path: 'create/tvseries', component: CreateTvseriesComponent, canActivate: [AuthGuard]},
     {path: 'movies/:id', component: MovieDetailsComponent},
     {path: 'tvseries/:id', component: TvseriesDetailsComponent},
-    {path: 'search/:search', component: SearchComponent},
     {path: '**', component: NotFoundComponent}
 ];
 
