@@ -1,0 +1,19 @@
+<div class="trailer-container">
+    <div class="trailer">
+        <iframe *ngIf="serial"
+                [src]="serial.src | safe"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                frameborder="2"
+                height="500vh"
+                width="700vh"
+        >
+        </iframe>
+    </div>
+    <div class="container">
+        <h2>{{serial.titleEN}} {{serial.secondTitleEN}} ({{serial.titleSK}} {{serial.secondTitleSK}})</h2>
+        <h6><b>Directors:</b> {{serial.director}}</h6>
+        <h6><b>Actors: </b> {{serial.actors}}</h6>
+        <p><b>Description:</b> {{serial.description}}</p>
+    </div>
+</div>

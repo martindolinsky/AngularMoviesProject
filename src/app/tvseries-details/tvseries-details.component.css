@@ -1,0 +1,9 @@
+.trailer-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.container {
+    width: 50%;
+}
