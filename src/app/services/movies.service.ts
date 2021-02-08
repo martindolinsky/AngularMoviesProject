@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Movie} from '../entities/Movie';
+import {Comment} from '../entities/Comment';
 import {catchError} from 'rxjs/operators';
 import {AuthService} from './auth.service';
 
@@ -40,5 +41,13 @@ export class MoviesService {
 
     searchMovie(search: string): any {
         return this.http.get<Movie>(SEARCH_URL + search, {responseType: 'json'});
+    }
+
+    getRelatedComments(movieId: number): Observable<any> {
+        return this.http.get(API_URL + 'comments/' + movieId, {responseType: 'json'});
+    }
+
+    createComment(comment: Comment, movieId: number): Observable<Comment> {
+        return this.http.post<Comment>(API_URL + 'comments/' + movieId + '/create', comment);
     }
 }

@@ -57,7 +57,7 @@ export class AuthService {
                 console.log('Server is unreachable');
             } else {
                 if (error.status >= 400 && error.status < 500) {
-                    const message = error.error.errorMessage ? ? JSON.parse(error.error).errorMessage;
+                    const message = error.error.errorMessage ?? JSON.parse(error.error).errorMessage;
                     this.snackbarService.errorMsg(message);
                     console.log(message);
                 } else {

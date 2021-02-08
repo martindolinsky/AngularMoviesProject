@@ -7,7 +7,9 @@
 <div class="wrapper">
     <div *ngFor="let serial of tvseries">
         <div class="container">
-            <img [src]="serial.srcImg" alt="{{serial.titleEN}} {{serial.secondTitleEN}}" height="200">
+            <a routerLink="/tvseries/{{serial.serialID}}">
+                <img [src]="serial.srcImg" alt="{{serial.titleEN}} {{serial.secondTitleEN}}" height="200">
+            </a>
             <h6><a routerLink="/tvseries/{{serial.serialID}}">{{serial.titleEN}} {{serial.secondTitleEN}}</a></h6>
         </div>
     </div>

@@ -17,3 +17,21 @@
         <p><b>Description:</b> {{serial.description}}</p>
     </div>
 </div>
+
+<form (ngSubmit)="onSubmit()" action="" class="form-container">
+    <div class="form-group">
+    <textarea name="commentMessage" id="commentMessage" cols="150" rows="3" [(ngModel)]="comment.message"
+              class="form-control col-sm-4"
+              placeholder="Share your opinion"></textarea>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+
+</form>
+
+<div *ngFor="let comment of comments">
+    Comment id: {{comment.id}}
+    SerialID: {{comment.movieId}}
+    Date: {{comment.date.substring(0, comment.date.length-3)}}
+    Message: {{comment.message}}
+</div>
+
