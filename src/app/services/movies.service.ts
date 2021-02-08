@@ -2,6 +2,8 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Movie} from '../entities/Movie';
+import {catchError} from 'rxjs/operators';
+import {AuthService} from './auth.service';
 
 const API_URL = 'http://localhost:8080/movies/';
 const SEARCH_URL = 'http://localhost:8080/search/movies/';
@@ -11,11 +13,13 @@ const SEARCH_URL = 'http://localhost:8080/search/movies/';
 })
 export class MoviesService {
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient, private authService: AuthService) {
     }
 
     getMovies(): Observable<any> {
-        return this.http.get(API_URL + 'list', {responseType: 'json'});
+        return this.http.get(API_URL + 'list', {responseType: 'json'}).pipe(
+            catchError(error => this.authService.processHttpError(error)
+            ));
     }
 
     getMovieById(movieId: number): Observable<Movie> {

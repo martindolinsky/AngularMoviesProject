@@ -3,10 +3,10 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
@@ -16,10 +16,10 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
         MatButtonModule,
         MatFormFieldModule,
         MatInputModule,
-        BrowserAnimationsModule,
         MatIconModule,
         MatToolbarModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatDialogModule
     ],
     exports: [
         MatCardModule,
@@ -28,7 +28,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
         MatInputModule,
         MatIconModule,
         MatToolbarModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatDialogModule,
     ]
 })
 export class MaterialModule {

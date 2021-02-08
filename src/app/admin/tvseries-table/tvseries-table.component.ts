@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {TvSerie} from '../../entities/TvSerie';
 import {TvseriesService} from '../../services/tvseries.service';
+import {ConfirmDialogComponent, ConfirmDialogData} from '../confirm-dialog/confirm-dialog.component';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
     selector: 'app-tvseries-table',
@@ -10,10 +12,10 @@ import {TvseriesService} from '../../services/tvseries.service';
 })
 export class TvseriesTableComponent implements OnInit {
     tvSeries: TvSerie[];
-    editedSerial: TvSerie;
+    deletedSerial: TvSerie;
     actionWithSerial: string;
 
-    constructor(private tvseriesService: TvseriesService, private route: ActivatedRoute) {
+    constructor(private tvseriesService: TvseriesService, private route: ActivatedRoute, private dialog: MatDialog) {
     }
 
     ngOnInit(): void {
@@ -27,10 +29,21 @@ export class TvseriesTableComponent implements OnInit {
         );
     }
 
-    deleteTvSerie(serial: TvSerie): void {
-        this.editedSerial = serial;
-        this.tvseriesService.deleteSerial(serial).subscribe(ok => {
-            this.tvSeries = this.tvSeries.filter(s => s !== serial);
+    deleteTvSerie(serial: TvSerie): any {
+        const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+            data: new ConfirmDialogData('Deleting serial', 'Do you really want to delete serial ' + serial.titleEN + ' '
+                + serial.secondTitleEN + '?')
+        });
+
+        dialogRef.afterClosed().subscribe(result => {
+            if (result) {
+                this.tvseriesService.deleteSerial(serial).subscribe(ok => {
+                    if (ok) {
+                        this.deletedSerial = serial;
+                        this.tvSeries = this.tvSeries.filter(tv => tv.serialID !== serial.serialID);
+                    }
+                });
+            }
         });
     }
 

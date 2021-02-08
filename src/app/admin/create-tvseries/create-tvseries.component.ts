@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {TvseriesService} from '../../services/tvseries.service';
 import {switchMap} from 'rxjs/operators';
 import {of} from 'rxjs';
+import {SnackbarService} from '../../services/snackbar.service';
 
 @Component({
     selector: 'app-create-tvseries',
@@ -17,7 +18,8 @@ export class CreateTvseriesComponent implements OnInit {
 
     constructor(private route: ActivatedRoute,
                 private tvseriesService: TvseriesService,
-                private router: Router) {
+                private router: Router,
+                private snackbarService: SnackbarService) {
     }
 
     ngOnInit(): void {
@@ -41,8 +43,9 @@ export class CreateTvseriesComponent implements OnInit {
         this.buttonPressed = true;
         this.tvseriesService.createSerial(this.tvSerie).subscribe(serial => {
             this.tvSerie = serial;
+            this.router.navigateByUrl('admin/tvseries');
+            this.snackbarService.successMsg('TvSeries successfully created');
         });
-        this.router.navigateByUrl('admin/tvseries');
     }
 
 }

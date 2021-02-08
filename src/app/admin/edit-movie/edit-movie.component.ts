@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {MoviesService} from '../../services/movies.service';
 import {switchMap} from 'rxjs/operators';
 import {of} from 'rxjs';
+import {SnackbarService} from '../../services/snackbar.service';
 
 @Component({
     selector: 'app-edit-movie',
@@ -17,7 +18,8 @@ export class EditMovieComponent implements OnInit {
 
     constructor(private route: ActivatedRoute,
                 private moviesService: MoviesService,
-                private router: Router) {
+                private router: Router,
+                private snackbarService: SnackbarService) {
     }
 
     ngOnInit(): void {
@@ -42,12 +44,10 @@ export class EditMovieComponent implements OnInit {
         this.buttonPressed = true;
         this.moviesService.saveMovie(this.movie.movieID, this.movie).subscribe(movie => {
             this.movie = movie;
+            this.router.navigateByUrl('admin/movies');
+            this.snackbarService.successMsg('Movie successfully edited');
         });
-        this.redirectToTable();
     }
 
-    redirectToTable(): void {
-        window.location.replace('/admin/movies');
-    }
 
 }

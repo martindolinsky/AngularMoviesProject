@@ -4,6 +4,7 @@ import {switchMap} from 'rxjs/operators';
 import {of} from 'rxjs';
 import {TvSerie} from '../../entities/TvSerie';
 import {TvseriesService} from '../../services/tvseries.service';
+import {SnackbarService} from '../../services/snackbar.service';
 
 @Component({
     selector: 'app-edit-tvseries',
@@ -17,7 +18,8 @@ export class EditTvseriesComponent implements OnInit {
 
     constructor(private route: ActivatedRoute,
                 private tvseriesService: TvseriesService,
-                private router: Router) {
+                private router: Router,
+                private snackbarService: SnackbarService) {
     }
 
     ngOnInit(): void {
@@ -32,16 +34,15 @@ export class EditTvseriesComponent implements OnInit {
                 this.tvSerie = tvSerie;
                 console.log(tvSerie);
                 this.tvSerieTitle = tvSerie.titleEN;
-
-
             });
     }
 
     onSubmit(): void {
         this.buttonPressed = true;
         this.tvseriesService.saveSerial(this.tvSerie.serialID, this.tvSerie).subscribe(serial => {
-            this.tvSerie = serial
-            ;
+            this.tvSerie = serial;
+            this.router.navigateByUrl('admin/tvseries');
+            this.snackbarService.successMsg('TvSeries successfully edited');
         });
     }
 

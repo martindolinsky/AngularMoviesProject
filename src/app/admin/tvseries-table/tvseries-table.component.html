@@ -1,5 +1,6 @@
-<div *ngIf="editedSerial" class="alert alert-success">
-    Serial ({{editedSerial.serialID}} {{editedSerial.titleEN}} {{editedSerial.secondTitleEN}}) was successfully deleted.
+<div *ngIf="deletedSerial" class="alert alert-success">
+    Serial ({{deletedSerial.serialID}} {{deletedSerial.titleEN}} {{deletedSerial.secondTitleEN}}) was successfully
+    deleted.
 </div>
 <button class="btn btn-outline-primary btnAdd" routerLink="../../create/tvseries">Add Serial</button>
 <table class="table table-hover" style="width: 50%;">

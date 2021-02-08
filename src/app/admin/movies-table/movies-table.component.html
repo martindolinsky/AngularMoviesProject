@@ -1,6 +1,3 @@
-<div *ngIf="deletedMovie" class="alert alert-success">
-    Movie ({{deletedMovie.movieID}} {{deletedMovie.titleEN}} {{deletedMovie.secondTitleEN}}) was successfully deleted.
-</div>
 <button class="btn btn-outline-primary btnAdd" routerLink="../../create/movie">Add movie</button>
 <table class="table table-hover" style="width: 50%;">
     <thead>
@@ -19,7 +16,7 @@
                 <!--<fa-icon [icon]="faEdit"></fa-icon>--> edit
             </button>
             <button (click)="deleteMovie(movie)" class="btn btn-outline-danger" type="button">
-                <!--<fa-icon [icon]="faDelete" style="color: darkred"></fa-icon>-->delet
+                <!--<fa-icon [icon]="faDelete" style="color: darkred"></fa-icon>-->delete
             </button>
         </td>
     </tr>

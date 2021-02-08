@@ -1,3 +1,9 @@
+<form (ngSubmit)="onSubmit()" class="form-inline my-2 my-lg-0">
+    <input (keyup)="searchMovie(search)" [(ngModel)]="search" aria-label="Search" class="form-control mr-sm-2"
+           name="search"
+           placeholder="Search" type="search">
+</form>
+
 <div class="wrapper">
     <div *ngFor="let movie of movies">
         <div class="container">

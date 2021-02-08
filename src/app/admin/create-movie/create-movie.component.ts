@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {MoviesService} from '../../services/movies.service';
 import {switchMap} from 'rxjs/operators';
 import {of} from 'rxjs';
+import {SnackbarService} from '../../services/snackbar.service';
 
 @Component({
     selector: 'app-create-movie',
@@ -17,7 +18,8 @@ export class CreateMovieComponent implements OnInit {
 
     constructor(private route: ActivatedRoute,
                 private moviesService: MoviesService,
-                private router: Router) {
+                private router: Router,
+                private snackbarService: SnackbarService) {
     }
 
     ngOnInit(): void {
@@ -42,8 +44,11 @@ export class CreateMovieComponent implements OnInit {
         this.buttonPressed = true;
         this.moviesService.createMovie(this.movie).subscribe(movie => {
             this.movie = movie;
+            this.router.navigateByUrl('admin/movies');
+            this.snackbarService.successMsg('Movie successfully created');
         });
-        this.router.navigateByUrl('admin/movies');
+
+
     }
 
 }
