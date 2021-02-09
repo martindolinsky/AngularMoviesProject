@@ -12,10 +12,10 @@ export class AuthGuard implements CanActivate, CanLoad {
     constructor(private authService: AuthService, private router: Router, private tokenStorage: TokenStorageService) {
     }
 
-
     canActivate(): boolean {
         if (this.authService.loggedIn()) {
-            if (this.tokenStorage.getUser().roles.toString() === 'ROLE_USER') {
+            if (this.tokenStorage.getUser().roles.toString() === 'ROLE_USER'
+                || this.tokenStorage.getUser().roles.toString() === 'ROLE_ADMIN') {
                 console.log(this.tokenStorage.getUser().roles);
                 return true;
             }

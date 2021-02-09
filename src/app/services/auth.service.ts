@@ -26,17 +26,10 @@ export class AuthService {
             tap(token => {
                 this.snackbarService.successMsg('User ' + credentials.username + ' has logged in');
                 console.log('User ' + credentials.username + ' has logged in');
-            }), catchError(err => this.processHttpError(err)));
+            }), catchError(err => {
+                return this.processHttpError(err);
+            } ));
     }
-
-    // login(auth:Auth): Observable<string> {
-    //     return this.http.post(this.serverUrl + "login", auth, {responseType: 'text'}).pipe(
-    //         tap(token => {
-    //             this.snackbarServise.successMessage("User " + auth.name + " has logged in");
-    //         }),
-    //         catchError(error => this.processHttpError(error))
-    //     );
-    // }
 
     register(user: { username: any; email: any; password: any; }): Observable<any> {
         return this.http.post(AUTH_API + 'signup', {
@@ -57,7 +50,8 @@ export class AuthService {
                 console.log('Server is unreachable');
             } else {
                 if (error.status >= 400 && error.status < 500) {
-                    const message = error.error.errorMessage ?? JSON.parse(error.error).errorMessage;
+                    // const message = error.error.errorMessage ?? JSON.parse(error.error).errorMessage;
+                    const message = error.error.error ? error.error.error : JSON.parse(error.error).error;
                     this.snackbarService.errorMsg(message);
                     console.log(message);
                 } else {

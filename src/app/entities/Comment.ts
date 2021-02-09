@@ -6,7 +6,8 @@ export class Comment {
         public date?: string,
         public message?: string,
         public movieId?: number,
-        public serialId?: number
+        public serialId?: number,
+        public username?: string
     ) {
     }
 }

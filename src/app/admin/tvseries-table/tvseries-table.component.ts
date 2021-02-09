@@ -13,7 +13,6 @@ import {MatDialog} from '@angular/material/dialog';
 export class TvseriesTableComponent implements OnInit {
     tvSeries: TvSerie[];
     deletedSerial: TvSerie;
-    actionWithSerial: string;
 
     constructor(private tvseriesService: TvseriesService, private route: ActivatedRoute, private dialog: MatDialog) {
     }

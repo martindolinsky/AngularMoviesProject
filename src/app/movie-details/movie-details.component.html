@@ -33,6 +33,7 @@
 <div *ngFor="let comment of comments">
     Comment id: {{comment.id}}
     MovieID: {{comment.movieId}}
+    Comment user ID: {{comment.username}}
     Date: {{comment.date.substring(0, comment.date.length-3)}}
     Message: {{comment.message}}
 </div>

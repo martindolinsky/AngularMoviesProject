@@ -57,10 +57,8 @@ export class MovieDetailsComponent implements OnInit {
     onSubmit(): void {
         this.moviesService.createComment(this.comment, this.movieId).subscribe(comment => {
             this.comment = comment;
-            // this.router.navigateByUrl('movies/' + this.movieId);
-            window.location.reload();
+            this.getComments();
         });
-
 
     }
     getComments(): any {

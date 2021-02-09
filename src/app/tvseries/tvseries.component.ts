@@ -37,7 +37,9 @@ export class TvseriesComponent implements OnInit {
         this.tvseriesService.searchSerial(this.search).subscribe(
             data => {
                 this.tvseries = data;
+                console.log(data);
                 input = this.search;
+                console.log(input);
             },
             err => {
                 this.tvseries = JSON.parse(err.error).message;

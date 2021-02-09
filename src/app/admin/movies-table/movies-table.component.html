@@ -13,16 +13,12 @@
         <td>{{movie.titleEN}} {{movie.secondTitleEN}}</td>
         <td>
             <button class="btn btn-outline-secondary" routerLink="/edit/movies/{{movie.movieID}}" type="button">
-                <!--<fa-icon [icon]="faEdit"></fa-icon>--> edit
+                edit
             </button>
             <button (click)="deleteMovie(movie)" class="btn btn-outline-danger" type="button">
-                <!--<fa-icon [icon]="faDelete" style="color: darkred"></fa-icon>-->delete
+               delete
             </button>
         </td>
     </tr>
     </tbody>
 </table>
-<!--<button type="button" class="btn btn-dark" (click)="OnNewUserButtonClick()">-->
-<!--Add user-->
-<!--</button>-->
-<!--<app-user-edit [user]="editedUser" [actionWithUser]="actionWithUser" (saved)="saveUser($event)"></app-user-edit>-->

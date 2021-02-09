@@ -54,8 +54,7 @@ export class TvseriesDetailsComponent implements OnInit {
     onSubmit(): void {
         this.tvseriesService.createComment(this.comment, this.serialId).subscribe(comment => {
             this.comment = comment;
-            // this.router.navigateByUrl('movies/' + this.movieId);
-            window.location.reload();
+            this.getComments();
         });
 
     }

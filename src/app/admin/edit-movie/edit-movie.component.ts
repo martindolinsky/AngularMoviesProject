@@ -36,7 +36,6 @@ export class EditMovieComponent implements OnInit {
                 this.movieTitle = movie.titleEN;
                 console.log(movie.movieID);
 
-
             });
     }
 

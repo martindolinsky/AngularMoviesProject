@@ -34,8 +34,6 @@ export class CreateTvseriesComponent implements OnInit {
                 this.tvSerie = tvSerie;
                 console.log(tvSerie);
                 this.tvSerieTitle = tvSerie.titleEN;
-
-
             });
     }
 
