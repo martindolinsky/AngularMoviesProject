@@ -1,24 +1,26 @@
-<button class="btn btn-outline-primary btnAdd" routerLink="../../create/movie">Add movie</button>
-<table class="table table-hover" style="width: 50%;">
-    <thead>
-    <tr>
-        <th>movieID</th>
-        <th>title</th>
-        <th>action</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let movie of movies">
-        <td>{{movie.movieID}}</td>
-        <td>{{movie.titleEN}} {{movie.secondTitleEN}}</td>
-        <td>
-            <button class="btn btn-outline-secondary" routerLink="/edit/movies/{{movie.movieID}}" type="button">
-                edit
-            </button>
-            <button (click)="deleteMovie(movie)" class="btn btn-outline-danger" type="button">
-               delete
-            </button>
-        </td>
-    </tr>
-    </tbody>
-</table>
+<div class="tableWrapper">
+    <button class="btn btn-outline-primary btnAdd" routerLink="../../create/movie">Add movie</button>
+    <table class="table table-hover" style="width: 50%;">
+        <thead>
+        <tr>
+            <th>movieID</th>
+            <th>title</th>
+            <th>action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let movie of movies">
+            <td>{{movie.movieID}}</td>
+            <td>{{movie.titleEN}} {{movie.secondTitleEN}}</td>
+            <td>
+                <button class="btn btn-outline-secondary" routerLink="/edit/movies/{{movie.movieID}}" type="button">
+                   Edit
+                </button>
+                <button (click)="deleteMovie(movie)" class="btn btn-outline-danger" type="button">
+                    Delete
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

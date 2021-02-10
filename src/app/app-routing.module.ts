@@ -4,7 +4,7 @@ import {HomeComponent} from './home/home.component';
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {ProfileComponent} from './profile/profile.component';
-import {BoardAdminComponent} from './board-admin/board-admin.component';
+import {BoardAdminComponent} from './admin/board-admin/board-admin.component';
 import {MoviesComponent} from './movies/movies.component';
 import {TvseriesComponent} from './tvseries/tvseries.component';
 import {EditMovieComponent} from './admin/edit-movie/edit-movie.component';

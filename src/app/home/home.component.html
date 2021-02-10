@@ -1,27 +1,39 @@
-<div>
-    <h2>MOVIES</h2>
-</div>
+<main>
+    <section class="glass">
+        <div class="moviesColumn">
 
-<div class="wrapper">
-    <div *ngFor="let movie of movies">
-        <div *ngIf="movie.movieID < 6" class="container">
-            <a routerLink="/movies/{{movie.movieID}}"><img [src]="movie.srcImg" alt="{{movie.titleEN}} {{movie.secondTitleEN}}" height="200"></a>
-            <h6><a routerLink="/movies/{{movie.movieID}}">{{movie.titleEN}} {{movie.secondTitleEN}}</a></h6>
+            <div class="heading">
+                <a routerLink="/movies"><h1>Movies</h1></a>
+            </div>
+
+            <div class="moviesCards">
+                <div *ngFor="let movie of movies" class="moviesIterator">
+                    <div *ngIf="movie.movieID < 4" class="cardContainer">
+                        <a routerLink="/movies/{{movie.movieID}}"><img [src]="movie.srcImg" alt="{{movie.titleEN}} {{movie.secondTitleEN}}" height="200"></a>
+                        <h6><a routerLink="/movies/{{movie.movieID}}">{{movie.titleEN}} {{movie.secondTitleEN}}</a></h6>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
-<div>
-    <h2>TV SERIES</h2>
-</div>
+        <div class="tvSeriesColumn">
 
-<div class="wrapper">
-    <div *ngFor="let serial of tvseries">
-        <div *ngIf="serial.serialID < 6" class="container">
-            <a routerLink="/tvseries/{{serial.serialID}}">
-                <img [src]="serial.srcImg" alt="{{serial.titleEN}} {{serial.secondTitleEN}}" height="200">
-            </a>
-            <h6><a routerLink="/tvseries/{{serial.serialID}}">{{serial.titleEN}} {{serial.secondTitleEN}}</a></h6>
+            <div class="heading">
+                <a routerLink="/tvseries"><h1>Series</h1></a>
+            </div>
+
+            <div class="tvSeriesCards">
+                <div *ngFor="let serial of tvseries" class="tvSeriesIterator">
+                    <div *ngIf="serial.serialID < 4" class="cardContainer">
+                        <a routerLink="/tvseries/{{serial.serialID}}"><img [src]="serial.srcImg" alt="{{serial.titleEN}} {{serial.secondTitleEN}}" height="200"></a>
+                        <h6><a routerLink="/tvseries/{{serial.serialID}}">{{serial.titleEN}} {{serial.secondTitleEN}}</a></h6>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </div>
-</div>
+    </section>
+</main>
+
+<div class="circle1"></div>
+<div class="circle2"></div>

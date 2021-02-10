@@ -1,27 +1,32 @@
-# MoviesProject
+# MoviesProject installation guide
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
+## Clone repository
+Firstly you need to clone this repository using `git clone https://github.com/martindolinsky/AngularMoviesProject` to your IDE <br>
+Run `npm update` to update your npm repositories <br>
+Run `ng update` to update your angular repositories <br>
+Ensure that port `localhost 4200` is not listening to other applications <br>
+Then run `ng serve` to start the angular application
 
-## Development server
+## MySQL server settings
+Run database [dump script](https://github.com/martindolinsky/AngularMoviesProject/blob/master/database.sql) on MySQL client <br>
+Open XAMPP or any other client and change the MySQL port to: `8889` <br>
+Login to database using: <br> 
+Username: `root` <br>
+Password: `root`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## SpringBoot server settings
+Open second terminal window  and navigate to root directory of the project<br>
+Run `java -jar MoviesServer.jar` to start the SpringBoot server
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Login as User
+To login as User use : <br>
+Login: `user` <br>
+ Password: `useruser`
 
-## Build
+## Login as Administrator
+To login as Administrator use : <br>
+Login: `admin` <br>
+ Password: `adminadmin`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Enjoy :)

@@ -1,15 +1,26 @@
-<form (ngSubmit)="onSubmit()" class="form-inline my-2 my-lg-0">
-    <input (keyup)="searchMovie(search)" [(ngModel)]="search" aria-label="Search" class="form-control mr-sm-2"
-           name="search"
-           placeholder="Search" type="search">
-</form>
+<main>
+    <section class ="glass">
+        <div class="allMovies">
+            <div class="status">
+                <h1>All Movies</h1>
+                <form (ngSubmit)="onSubmit()" class="form-inline my-2 my-lg-0">
+                    <input (keyup)="searchMovie(search)" [(ngModel)]="search" aria-label="Search" class="form-control mr-sm-2"
+                           name="search"
+                           placeholder="Search" type="search">
+                </form>
+            </div>
 
-<div class="wrapper">
-    <div *ngFor="let movie of movies">
-        <div class="container">
-            <a routerLink="/movies/{{movie.movieID}}"><img [src]="movie.srcImg"  alt="{{movie.titleEN}} {{movie.secondTitleEN}}" height="200"></a>
-            <h6><a routerLink="/movies/{{movie.movieID}}">{{movie.titleEN}} {{movie.secondTitleEN}}</a></h6>
+            <div class="cards">
+                <div *ngFor="let movie of movies" class="cardIterator">
+                    <div class="cardContainer">
+                        <a routerLink="/movies/{{movie.movieID}}"><img [src]="movie.srcImg" alt="{{movie.titleEN}} {{movie.secondTitleEN}}" height="200"></a>
+                        <h6><a routerLink="/movies/{{movie.movieID}}">{{movie.titleEN}} {{movie.secondTitleEN}}</a></h6>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    </section>
 
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+</main>

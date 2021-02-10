@@ -10,7 +10,7 @@ import {NavbarComponent} from './navbar/navbar.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {ProfileComponent} from './profile/profile.component';
-import {BoardAdminComponent} from './board-admin/board-admin.component';
+import {BoardAdminComponent} from './admin/board-admin/board-admin.component';
 import {authInterceptorProviders} from './helpers/auth.interceptor';
 import {MoviesComponent} from './movies/movies.component';
 import {TvseriesComponent} from './tvseries/tvseries.component';

@@ -1,39 +1,46 @@
-<div class="trailer-container">
-    <div class="trailer">
-        <iframe *ngIf="movie"
-                [src]="movie.src | safe"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                frameborder="2"
-                height="500vh"
-                width="700vh"
-        >
-        </iframe>
-    </div>
+<main>
+    <section class="glass">
+        <div class="content-wrapper">
+            <div class="trailer-container">
+                <div class="trailer">
+                    <iframe class="responsive-iframe" *ngIf="movie"
+                            [src]="movie.src | safe"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            frameborder="0"
+                    >
+                    </iframe>
+                </div>
 
-    <div class="container" *ngIf="movie">
-        <h2>{{movie.titleEN}} {{movie.secondTitleEN}} ({{movie.titleSK}} {{movie.secondTitleSK}})</h2>
-        <h4><b>Length:</b> {{movie.length}} min.</h4>
-        <h6><b>Directors:</b> {{movie.director}}</h6>
-        <h6><b>Actors: </b> {{movie.actors}}</h6>
-        <p><b>Description:</b> {{movie.description}}</p>
-    </div>
-</div>
+                <div class="descriptionContainer" *ngIf="movie">
+                    <h2>{{movie.titleEN}} {{movie.secondTitleEN}} ({{movie.titleSK}} {{movie.secondTitleSK}})</h2>
+                    <h4><b>Length:</b> {{movie.length}} min.</h4>
+                    <h6><b>Directors:</b> {{movie.director}}</h6>
+                    <h6><b>Actors: </b> {{movie.actors}}</h6>
+                    <p><b>Description:</b> {{movie.description}}</p>
+                </div>
+            </div>
 
-<form (ngSubmit)="onSubmit()" action="" class="form-container">
-    <div class="form-group">
-    <textarea name="commentMessage" id="commentMessage" cols="150" rows="3" [(ngModel)]="comment.message"
-               class="form-control col-sm-4"
-               placeholder="Share your opinion"></textarea>
-    </div>
-    <button class="btn btn-primary" type="submit">Submit</button>
+            <form (ngSubmit)="onSubmit()" action="" class="form-container">
+                <div class="form-group">
+                <textarea name="commentMessage" id="commentMessage" cols="150" rows="3" [(ngModel)]="comment.message"
+                          class="form-control col-sm-4"
+                          placeholder="Share your opinion"></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit">Submit</button>
 
-</form>
+            </form>
 
-<div *ngFor="let comment of comments">
-    Comment id: {{comment.id}}
-    MovieID: {{comment.movieId}}
-    Comment user ID: {{comment.username}}
-    Date: {{comment.date.substring(0, comment.date.length-3)}}
-    Message: {{comment.message}}
-</div>
+            <div class="commentSection">
+                <div class="commentHeader">
+                    <h2>Your Comments End Up Here.</h2>
+                </div>
+
+                <div *ngFor="let comment of comments">
+                    <span><strong>{{comment.username}} ({{comment.date.substring(0, comment.date.length-3)}})</strong> <br>{{comment.message}} </span>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

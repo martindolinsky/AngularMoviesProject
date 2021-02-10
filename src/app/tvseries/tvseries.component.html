@@ -1,16 +1,26 @@
-<form (ngSubmit)="onSubmit()" class="form-inline my-2 my-lg-0">
-    <input (keyup)="searchSerial(search)" [(ngModel)]="search" aria-label="Search" class="form-control mr-sm-2"
-           name="search"
-           placeholder="Search" type="search">
-</form>
+<main>
+    <section class="glass">
+        <div class="allSeries">
+            <div class="status">
+                <h1>All Series</h1>
+                <form (ngSubmit)="onSubmit()" class="form-inline my-2 my-lg-0">
+                    <input (keyup)="searchSerial(search)" [(ngModel)]="search" aria-label="Search" class="form-control mr-sm-2"
+                           name="search"
+                           placeholder="Search" type="search">
+                </form>
+            </div>
 
-<div class="wrapper">
-    <div *ngFor="let serial of tvseries">
-        <div class="container">
-            <a routerLink="/tvseries/{{serial.serialID}}">
-                <img [src]="serial.srcImg" alt="{{serial.titleEN}} {{serial.secondTitleEN}}" height="200">
-            </a>
-            <h6><a routerLink="/tvseries/{{serial.serialID}}">{{serial.titleEN}} {{serial.secondTitleEN}}</a></h6>
+            <div class="cards">
+                <div *ngFor="let serial of tvseries">
+                    <div class="cardContainer">
+                        <a routerLink="/tvseries/{{serial.serialID}}"><img [src]="serial.srcImg" alt="{{serial.titleEN}} {{serial.secondTitleEN}}" height="200"></a>
+                        <h6><a routerLink="/tvseries/{{serial.serialID}}">{{serial.titleEN}} {{serial.secondTitleEN}}</a></h6>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    </section>
+
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+</main>

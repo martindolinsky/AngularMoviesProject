@@ -1,15 +1,99 @@
-.wrapper {
+main {
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(to right top, #000000, #000000);
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-right: 5%;
-    margin-left: 5%;
+    align-items: center;
+    justify-content: center;
 }
 
-.container {
-    width: 200px;
-    height: 200px;
-    margin: 20px;
-    border-radius: 8px;
+h1 {
+    color: #000000c0;
+    font-weight: 500;
+    font-size: 3rem;
+    opacity: 0.8;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(14, 13, 13);
+}
+
+.glass {
+    background: white;
+    min-height: 80vh;
+    width: 100%;
+    margin-top: 3.5rem;
+    background: linear-gradient(to right bottom,
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.2));
+    z-index: 2;
+    backdrop-filter: blur(1rem);
+    display: flex;
+}
+
+.circle1, .circle2 {
+    background: white;
+    background: linear-gradient(to right bottom,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.3));
+    height: 20rem;
+    width: 20rem;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.circle1 {
+    top: 10%;
+    right: 5%;
+    background-color: #0f0d0cc4
+}
+
+.circle2 {
+    bottom: 2%;
+    left: 5%;
+}
+
+.moviesColumn {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
     text-align: center;
+    background: linear-gradient(to right bottom,
+    rgba(255, 255, 255, 0.055),
+    rgba(255, 255, 255, 0.055));
+    border-radius: 2rem;
+}
+
+.tvSeriesColumn {
+    flex: 1;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    border-radius: 2rem;
+}
+
+.cardContainer {
+    background: linear-gradient(to left top,
+    rgba(255,255,255,0.2),
+    rgba(255,255,255,0.05));
+    margin: 2rem 0rem;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 6px 6px 20px rgba(49, 49, 49, 0.5);
+}
+
+.heading h1 {
+    transition: all 0.2s;
+}
+
+h1:hover{
+    opacity: 0.3;
+    font-size: 4rem;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in;
 }
